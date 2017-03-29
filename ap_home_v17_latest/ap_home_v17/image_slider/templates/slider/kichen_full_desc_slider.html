@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AP Homes Image Slider</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+        <script type="text/javascript" src="../../scripts/jquery-1.9.1.min.js"></script>
+
+        <link type="text/css" rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css" />
+
+        <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+
+        <link type="text/css" rel="stylesheet" href="slider.css" />
+        <script type="text/javascript" src="../../scripts/slider.js"></script>
+
+        <link type="text/css" rel="stylesheet" href="../../../css/style2.css" />
+        <link type="text/css" rel="stylesheet" href="../style.css" />
+
+        <link rel="stylesheet" href="../../bootstrap/font-awesome-4.3.0/css/font-awesome.min.css">
+
+        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+
+        <script type="text/javascript">
+            jQuery(document).ready(
+                function() {
+
+                    //initialize slider
+                    var slider = new XPRO.Controls.Slider(null);
+                    slider.initSlider("scroller", {
+                            "mode"              : "slide",
+                            "dir"               : "up",
+                            "interval"          : 4000,
+                            "iniWidth"          : 1600,
+                            "iniHeight"         : 800,
+                            "autoRun"           : false,
+                            "autoHeightMode"    : "maintainratio",
+                            "thumbnails"        : {},
+                            "infoPanel"         : {panelId: "infopanel"},
+                            "imageVAlign"       : "center",
+                            "stopOnHover"       : true,
+                            "floatThumb"        : false,
+                            "onSlide"           : function(cnt, currentIdx) {
+                                jQuery("#infopanel_header").html((cnt.idx+1) + " of " + slider.getContent().length);
+                            }
+                    });
+
+
+                    //
+                    jQuery("#divExpand").on("click", function() {
+                        if(jQuery("#divPanelRight").css("display")=="none") {
+                            jQuery("#divPanelLeft").removeClass().addClass("col-md-8");
+                            jQuery('.close_btn').addClass('show');
+                            slider.resized();
+
+                            jQuery("#divPanelRight").show("slow");
+                            jQuery("#divExpand").removeClass().addClass("xpro-expanded");
+                        } else {
+                            jQuery("#divPanelRight").hide("slow", function() {
+                                jQuery("#divPanelLeft").removeClass().addClass("col-md-12");
+                                // jQiery('.ap-slider-container').css({padding-left : '0'});
+                                jQuery('.close_btn').addClass('hide');
+                                slider.resized();
+                                jQuery("#divExpand").removeClass().addClass("xpro-collapsed");
+                            });
+                        }
+                    })
+
+                }
+            );
+        </script>
+
+        <style type="text/css">
+            #divExpand {
+                position: absolute;
+                right: 30px;
+                top: 6%;
+                color: #333;
+                cursor: pointer;
+                width: 30px;
+                height: 30px;
+            }
+
+            div.xpro-expanded {
+                background-image: url(../images/expand.png);
+                background-repeat: no-repeat;
+            }
+
+            div.xpro-collapsed {
+                background-image: url(../images/collapse.png);
+                background-repeat: no-repeat;
+                right: 50px !important;
+                top: 5% !important;
+            }
+
+            #infopanel_header {
+                color: #333;
+            }
+          @media only screen and (max-width: 480px)
+            {
+                #divExpand {
+                right: 8px;
+                top: 8%;
+            }
+             div.xpro-expanded {
+                background-image: url(../images/expand_sm.png);
+                background-repeat: no-repeat;
+            }
+            div.xpro-collapsed {
+                background-image: url(../images/collapse_sm.png);
+                background-repeat: no-repeat;
+                right: 12px !important;
+                top: 6% !important;
+            }
+            }
+        </style>
+
+    </head>
+    <body>
+
+  <section id="ap_main_slider">
+        <div class="container-fluid">
+
+            <div class="ap-content-panel">
+
+            <div class="row" style="margin-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; ">
+              <a class="close_btn" href="kichen_slider.html"><img src="../images/CLOSE.png" class="img-responsive pull-right close_button"></a>
+                <div id="divPanelLeft" class="col-md-8">
+
+                    <div class="ap-slider-container">
+                        <div id="scroller" class="xpro-slider image_placeholder">
+                            <div class="xpro-slider-content">
+                                <div class="xpro-slider-item">
+                                    <img src="../images/resized/kichen/kichen01.jpg" class="img_box" />
+                                    <!-- <div class="xpro-thumb-item"><img src="../images/thumbs/1.jpg" /></div> -->
+                                    <div class="xpro-slider-info">
+                                         <div class="title">
+                                            <strong class="bold_header">Inspiring</strong> <span class="light_header">Looks</span>
+                                        </div>
+                                        <p class="layer_text">Classic isn’t a characteristic of age, but a mark of the ageless. The rustic baked-earth colors and textures of the Royal matt finish on the walls are having their time in the blessed royal presenc e of the ‘ Moghulsarai’. Inspired by the ‘Tehzeeb’  of the Moghuls and the eclectic poetic compositions of the Persians, Sabyasachi recalls the intricacy of the sixteenth century  Miniatures through this soft romantic piece of  wall paper art. More than function, the traditional brassware , the penchant for earthiness in the colours and the ‘Down to  Earth’ look awaken a deep emotion of connect. Feel closer to the earth under your feet  as you eat. </p>
+                                        <p class="border_holder"><img class="img_border img-responsive" src="../images/border.png"></p>
+                                    </div>
+                                </div>
+                                <div class="xpro-slider-item">
+                                    <img src="../images/resized/kichen/kichen02.jpg" class="img_box"/>
+                                    <!-- <div class="xpro-thumb-item"><img src="../images/thumbs/2.jpg" /></div> -->
+                                    <div class="xpro-slider-info">
+                                         <div class="title">
+                                            <strong class="bold_header">Signature</strong> <span class="light_header">Wall</span>
+                                        </div>
+                                        <p class="layer_text">Classic isn’t a characteristic of age, but a mark of the ageless. The rustic baked-earth colors and textures of the Royal matt finish on the walls are having their time in the blessed royal presenc e of the ‘ Moghulsarai’. Inspired by the ‘Tehzeeb’  of the Moghuls and the eclectic poetic compositions of the Persians, Sabyasachi recalls the intricacy of the sixteenth century  Miniatures through this soft romantic piece of  wall paper art. More than function, the traditional brassware , the penchant for earthiness in the colours and the ‘Down to  Earth’ look awaken a deep emotion of connect. Feel closer to the earth under your feet  as you eat.  </p>
+                                        <p class="border_holder"><img class="img_border img-responsive" src="../images/border.png"></p>
+                                    </div>
+                                </div>
+                                <div class="xpro-slider-item">
+                                    <img src="../images/resized/kichen/kichen03.jpg" class="img_box"/>
+                                    <!-- <div class="xpro-thumb-item"><img src="../images/thumbs/3.jpg" /></div> -->
+                                    <div class="xpro-slider-info">
+                                        <div class="title">
+                                            <strong class="bold_header">Inspiring</strong> <span class="light_header">Looks</span>
+                                        </div>
+                                        <p class="layer_text">Classic isn’t a characteristic of age, but a mark of the ageless. The rustic baked-earth colors and textures of the Royal matt finish on the walls are having their time in the blessed royal presenc e of the ‘ Moghulsarai’. Inspired by the ‘Tehzeeb’  of the Moghuls and the eclectic poetic compositions of the Persians, Sabyasachi recalls the intricacy of the sixteenth century  Miniatures through this soft romantic piece of  wall paper art. More than function, the traditional brassware , the penchant for earthiness in the colours and the ‘Down to  Earth’ look awaken a deep emotion of connect. Feel closer to the earth under your feet  as you eat.</p>
+                                        <p class="border_holder"><img class="img_border img-responsive" src="../images/border.png"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="divExpand" class="xpro-expanded" title="expand/collpase"></div>
+                </div>
+                <div id="divPanelRight" class="col-md-4">
+                    <!-- <div id="infopanel_header"></div> -->
+                    <div id="infopanel"></div>
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+</section>
+
+    </body>
+</html>

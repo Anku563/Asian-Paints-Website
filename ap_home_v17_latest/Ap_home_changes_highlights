@@ -1,0 +1,22 @@
+1) For back button, Check bath_slider.html : line 48
+   kichen_slider.html : line 47
+  lighting_slider.html : line 47
+  living_dining_slider.html :- line 48
+   For respective css, check style2.css line no- 53 to 79
+
+2) For collapse button css changes, check inline css of bath_full_desc_slider.html, kichen_full_desc_slider.html, lighting_full_desc_slider.html, living_dining_slider.html : line 94 or 95
+
+3) For apply supply changes, check line no. 564 - 654
+   For respective css, check style2.css line no.- 60 to 78
+   For respective responsive css, check style2.css line no. 1898, 2379 & 2701
+   For Apply Supply service box, check style2.css line 954, 965, 2492
+   For 3D Visualization, line no. 948
+
+4) Consultation service, team description section color, check style2.css line 897
+5) Close button for internal pages, go to the template folder, check style.css line 92
+6) For small screens, i have changed collapse/expand image, check inline css bath_full_desc_slider.html, kichen_full_desc_slider.html, lighting_full_desc_slider.html, living_dining_slider.html line no. 101 to 117
+7) Other css changes, check 
+   style2.css line 2436, 2441
+     go to the template/slider/slider.css line no. 200 & from 204 to 212
+
+Note :- Whatever line number i have mentioned above, copy that particular 'class' or 'id' css.
